@@ -1,2 +1,18 @@
+##TP LINK rc.local###
+
+echo "Calling Service Orchestrator to get the default configuration"
+curl -H "Content-Type: application/json" -X POST -d {\"serialKey\":\"chetan.gopal@verizon.com\"} http://10.76.110.112:3000/config >> /root/OpenWRT-OpenVPN.sh
+sleep 3
+curl -H "Content-Type: application/json" -X POST -d {\"serialKey\":\"chetan.gopal@verizon.com\"} http://10.76.110.112:3000/crt >> /etc/openvpn/vcpe.crt
+sleep 3
+curl -H "Content-Type: application/json" -X POST -d {\"serialKey\":\"chetan.gopal@verizon.com\"} http://10.76.110.112:3000/key >> /etc/openvpn/vcpe.key
+sleep 3
+
+echo "Applying the configuration"
+chmod 777 /root/OpenWRT-OpenVPN.sh
+./root/OpenWRT-OpenVPN.sh > /root/OpenWRT-OpenVPN.log 2>&1
+sleep 3 
+
+####DPID CHANGE#####
 ovs-vsctl set bridge br-int other_config:datapath-id=0000125870fd784d
 ovs-vsctl set bridge br-int other_config:datapath-id=00004ea533324642
