@@ -1,0 +1,202 @@
+{
+  "id": "69bb46ec-0129-4715-c99e-e3942020434d",
+  "name": "VzDCI BP - VZSGA",
+  "values": [
+    {
+      "enabled": true,
+      "key": "BP_SERVER",
+      "value": "10.100.16.184",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "TIME_STAMP",
+      "value": "{{$timestamp}}",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "GENERATED_UID",
+      "value": "{{$guid}}",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "SS_START_TIME_1",
+      "value": "2017-02-10T16:10:00-05:00",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "SS_END_TIME_1",
+      "value": "2017-02-10T16:15:00-05:00",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "SS_START_TIME_2",
+      "value": "2017-02-10T16:20:00-05:00",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "SS_END_TIME_2",
+      "value": "2017-02-10T16:25:00-05:00",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "RECUR_END_DATE_1",
+      "value": "2017-02-10T23:59:00-05:00",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "RECUR_END_DATE_2",
+      "value": "2017-02-10T23:59:00-05:00",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "VZOFCNTRLR_DOMAIN_ID",
+      "value": "59359810-7ede-457c-8e2a-b7044e73bfd2",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "VWAN_DOMAIN_ID",
+      "value": "59359828-fc63-496a-bbf8-eda47814ee1e",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "PROV_VER_GENERATED_UID",
+      "value": "d13cfd90-e6b7-3f25-59b7-2a96e2a1b6e8",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "DYN_BANDWIDTH_POLICY_RESOURCEID",
+      "value": "59359b04-7b30-4dfe-91e5-331e35889215",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "L3_POLICY_RESOURCEID",
+      "value": "59359967-f745-4252-af2f-34660f615104",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "L3_VPN_POLICY_RESOURCEID",
+      "value": "591b7341-2740-4f5a-8b25-2cfa87e12760",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "SCHED_BANDWIDTH_POLICY_RESOURCEID",
+      "value": "591b7341-2740-4f5a-8b25-2cfa97f12641",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "CONTROLLER",
+      "value": "10.100.16.151",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "CONTROLLER_ROUTER_ID",
+      "value": "10.100.16.151",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "CONTROLLER_REST_PORT",
+      "value": "8181",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "CONTROLLER_REST_SCHEME",
+      "value": "http",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "CONTROLLER_KAFKA_ID",
+      "value": "tb1-controller",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "VRR01",
+      "value": "10.100.16.161",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "VRR02",
+      "value": "10.100.16.162",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "VWAN",
+      "value": "10.100.16.175",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "VWAN_REST_PORT",
+      "value": "8443",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "VWAN_REST_SCHEME",
+      "value": "https",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "EMS",
+      "value": "10.100.16.141",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "EMS_PORT",
+      "value": "8080",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "EUREKA_PORT",
+      "value": "8090",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "BP_TOKEN",
+      "value": "d18ff55e55151186a06c",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "MY_UTC_TIME_1",
+      "value": "2017-06-05T16:56:15.093Z",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "PROV_TOPO_RESOURCEID",
+      "value": "5936d7e4-bcaa-482b-a76d-b79003a405be",
+      "type": "text"
+    }
+  ],
+  "timestamp": 1496766440568,
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2017-06-06T17:29:35.184Z",
+  "_postman_exported_using": "Postman/4.10.7"
+}
