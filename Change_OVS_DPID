@@ -16,3 +16,7 @@ sleep 3
 ####DPID CHANGE#####
 ovs-vsctl set bridge br-int other_config:datapath-id=0000125870fd784d
 ovs-vsctl set bridge br-int other_config:datapath-id=00004ea533324642
+ovs-vsctl set bridge br0 other_config:datapath-id=00006ae97d166a41   Node iD : 117551058545217
+ovs-vsctl set bridge br0 other_config:datapath-id=00006ae97d166a42   Node iD : 117551058545218
+ovs-vsctl set bridge br0 other_config:datapath-id=00006ae97d166a43   Node iD : 117551058545219
+
