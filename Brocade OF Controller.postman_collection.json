@@ -1,0 +1,687 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Brocade OF Controller",
+		"_postman_id": "a695b341-4e39-0753-5b6d-d5adee0ecaf5",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Provisioned Topology Env A setup",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/network-topology:network-topology/topology/of-l3-dci",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"topology\": [\n    {\n      \"topology-id\": \"of-l3-dci\",\n      \"topology-version\": \"12345678-1234-1234-1234-123456789ABC\",\n      \"topology-types\": {\n        \"ofl3-topology:of-l3\": {}\n      },\n      \"link\": [\n        {\n          \"destination\": {\n            \"dest-node\": \"POD-A1-R1-100\",\n            \"dest-tp\": \"enp130s0.100\"\n          },\n          \"link-cost\": \"1\",\n          \"link-id\": \"DC1-FB1-P1-V100-POD-A1-R1-100\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"10\"\n          },\n          \"source\": {\n            \"source-node\": \"DC1-FB1\",\n            \"source-tp\": \"te-1/1/1.100\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"DC1-FB1\",\n            \"dest-tp\": \"te-1/1/1.100\"\n          },\n          \"link-cost\": \"1\",\n          \"link-id\": \"POD-A1-R1-100-DC1-FB1-P1-V100\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"10\"\n          },\n          \"source\": {\n            \"source-node\": \"POD-A1-R1-100\",\n            \"source-tp\": \"enp130s0.100\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"DC2-FB1\",\n            \"dest-tp\": \"te-1/1/2\"\n          },\n          \"link-cost\": \"10\",\n          \"link-group-id\": [\n            \"DC1-FB1-DC2-FB1-G1\"\n          ],\n          \"link-id\": \"DC1-FB1-P2-DC2-FB1-P2\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"10\"\n          },\n          \"source\": {\n            \"source-node\": \"DC1-FB1\",\n            \"source-tp\": \"te-1/1/2\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"DC1-FB1\",\n            \"dest-tp\": \"te-1/1/2\"\n          },\n          \"link-cost\": \"10\",\n          \"link-group-id\": [\n            \"DC2-FB1-DC1-FB1-G1\"\n          ],\n          \"link-id\": \"DC2-FB1-P2-DC1-FB1-P2\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"10\"\n          },\n          \"source\": {\n            \"source-node\": \"DC2-FB1\",\n            \"source-tp\": \"te-1/1/2\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"DC2-FB2\",\n            \"dest-tp\": \"te-1/1/2\"\n          },\n          \"link-cost\": \"10\",\n          \"link-group-id\": [\n            \"DC1-FB1-DC2-FB2-G1\"\n          ],\n          \"link-id\": \"DC1-FB1-P4-DC2-FB2-P2\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"10\"\n          },\n          \"source\": {\n            \"source-node\": \"DC1-FB1\",\n            \"source-tp\": \"te-1/1/4\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"DC1-FB1\",\n            \"dest-tp\": \"te-1/1/4\"\n          },\n          \"link-cost\": \"10\",\n          \"link-group-id\": [\n            \"DC2-FB2-DC1-FB1-G1\"\n          ],\n          \"link-id\": \"DC2-FB2-P2-DC1-FB1-P4\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"10\"\n          },\n          \"source\": {\n            \"source-node\": \"DC2-FB2\",\n            \"source-tp\": \"te-1/1/2\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"VRR1-POD-B-1-200\",\n            \"dest-tp\": \"em2.200\"\n          },\n          \"link-cost\": \"1\",\n          \"link-id\": \"DC1-FB1-P47-V200-VRR1-POD-B-1-200\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"10\"\n          },\n          \"source\": {\n            \"source-node\": \"DC1-FB1\",\n            \"source-tp\": \"te-1/1/47.200\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"DC1-FB1\",\n            \"dest-tp\": \"te-1/1/47.200\"\n          },\n          \"link-cost\": \"1\",\n          \"link-id\": \"VRR1-POD-B-1-200-DC1-FB1-P47-V200\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"10\"\n          },\n          \"source\": {\n            \"source-node\": \"VRR1-POD-B-1-200\",\n            \"source-tp\": \"em2.200\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"POD-B1-R1-210\",\n            \"dest-tp\": \"FortyGigE1/0/29.210\"\n          },\n          \"link-cost\": \"1\",\n          \"link-id\": \"DC1-FB1-P50-V210-POD-B1-R1-210\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"40\"\n          },\n          \"source\": {\n            \"source-node\": \"DC1-FB1\",\n            \"source-tp\": \"qe-1/1/50.210\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"DC1-FB1\",\n            \"dest-tp\": \"qe-1/1/50.210\"\n          },\n          \"link-cost\": \"1\",\n          \"link-id\": \"POD-B1-R1-210-DC1-FB1-P50-V210\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"40\"\n          },\n          \"source\": {\n            \"source-node\": \"POD-B1-R1-210\",\n            \"source-tp\": \"FortyGigE1/0/29.210\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"POD-A2-R1-100\",\n            \"dest-tp\": \"enp130s0.100\"\n          },\n          \"link-cost\": \"1\",\n          \"link-id\": \"DC2-FB1-P1-V100-POD-A2-R1-100\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"10\"\n          },\n          \"source\": {\n            \"source-node\": \"DC2-FB1\",\n            \"source-tp\": \"te-1/1/1.100\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"DC2-FB1\",\n            \"dest-tp\": \"te-1/1/1.100\"\n          },\n          \"link-cost\": \"1\",\n          \"link-id\": \"POD-A2-R1-100-DC2-FB1-P1-V100\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"10\"\n          },\n          \"source\": {\n            \"source-node\": \"POD-A2-R1-100\",\n            \"source-tp\": \"enp130s0.100\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"POD-B2-R1-213\",\n            \"dest-tp\": \"FortyGigE1/0/31.213\"\n          },\n          \"link-cost\": \"1\",\n          \"link-id\": \"DC2-FB1-P50-V213-POD-B2-R1-213\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"40\"\n          },\n          \"source\": {\n            \"source-node\": \"DC2-FB1\",\n            \"source-tp\": \"qe-1/1/50.213\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"DC2-FB1\",\n            \"dest-tp\": \"qe-1/1/50.213\"\n          },\n          \"link-cost\": \"1\",\n          \"link-id\": \"POD-B2-R1-213-DC2-FB1-P50-V213\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"40\"\n          },\n          \"source\": {\n            \"source-node\": \"POD-B2-R1-213\",\n            \"source-tp\": \"FortyGigE1/0/31.213\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"POD-A2-R2-100\",\n            \"dest-tp\": \"enp130s0d1.100\"\n          },\n          \"link-cost\": \"1\",\n          \"link-id\": \"DC2-FB2-P1-V100-POD-A2-R2-100\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"10\"\n          },\n          \"source\": {\n            \"source-node\": \"DC2-FB2\",\n            \"source-tp\": \"te-1/1/1.100\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"DC2-FB2\",\n            \"dest-tp\": \"te-1/1/1.100\"\n          },\n          \"link-cost\": \"1\",\n          \"link-id\": \"POD-A2-R2-100-DC2-FB2-P1-V100\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"10\"\n          },\n          \"source\": {\n            \"source-node\": \"POD-A2-R2-100\",\n            \"source-tp\": \"enp130s0d1.100\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"DC2-FB2\",\n            \"dest-tp\": \"qe-1/1/49\"\n          },\n          \"link-cost\": \"1\",\n          \"link-group-id\": [\n            \"DC2-FB1-DC2-FB2-G1\"\n          ],\n          \"link-id\": \"DC2-FB1-P49-DC2-FB2-P49\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"40\"\n          },\n          \"source\": {\n            \"source-node\": \"DC2-FB1\",\n            \"source-tp\": \"qe-1/1/49\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"DC2-FB1\",\n            \"dest-tp\": \"qe-1/1/49\"\n          },\n          \"link-cost\": \"1\",\n          \"link-group-id\": [\n            \"DC2-FB2-DC2-FB1-G1\"\n          ],\n          \"link-id\": \"DC2-FB2-P49-DC2-FB1-P49\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"40\"\n          },\n          \"source\": {\n            \"source-node\": \"DC2-FB2\",\n            \"source-tp\": \"qe-1/1/49\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"DC2-FB2\",\n            \"dest-tp\": \"qe-1/1/52\"\n          },\n          \"link-cost\": \"1\",\n          \"link-group-id\": [\n            \"DC2-FB1-DC2-FB2-G1\"\n          ],\n          \"link-id\": \"DC2-FB1-P52-DC2-FB2-P52\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"40\"\n          },\n          \"source\": {\n            \"source-node\": \"DC2-FB1\",\n            \"source-tp\": \"qe-1/1/52\"\n          }\n        },\n        {\n          \"destination\": {\n            \"dest-node\": \"DC2-FB1\",\n            \"dest-tp\": \"qe-1/1/52\"\n          },\n          \"link-cost\": \"1\",\n          \"link-group-id\": [\n            \"DC2-FB2-DC2-FB1-G1\"\n          ],\n          \"link-id\": \"DC2-FB2-P52-DC2-FB1-P52\",\n          \"max-bandwidth\": {\n            \"unit\": \"Gbps\",\n            \"value\": \"40\"\n          },\n          \"source\": {\n            \"source-node\": \"DC2-FB2\",\n            \"source-tp\": \"qe-1/1/52\"\n          }\n        }\n      ],\n      \"node\": [\n        {\n          \"datapath-id\": \"0xFB01480FCFAFC1E9\",\n          \"datapath-type\": \"pica8\",\n          \"forwarding-box-name\": \"DC1-FB1\",\n          \"node-id\": \"DC1-FB1\",\n          \"termination-point\": [\n            {\n              \"fb-port-name\": \"te-1/1/1\",\n              \"vlan-id\": \"100\",\n              \"ip-address-and-subnet\": [\n                \"169.254.1.30/27\",\n                \"fdf8::1:fe/120\"\n              ],\n              \"tp-id\": \"te-1/1/1.100\"\n            },\n            {\n              \"fb-port-name\": \"te-1/1/2\",\n              \"tp-id\": \"te-1/1/2\"\n            },\n            {\n              \"fb-port-name\": \"te-1/1/4\",\n              \"tp-id\": \"te-1/1/4\"\n            },\n            {\n              \"fb-port-name\": \"te-1/1/47\",\n              \"vlan-id\": \"200\",\n              \"ip-address-and-subnet\": [\n                \"169.254.2.14/28\",\n                \"fdf8::2:7e/121\"\n              ],\n              \"tp-id\": \"te-1/1/47.200\"\n            },\n            {\n              \"fb-port-name\": \"qe-1/1/50\",\n              \"vlan-id\": \"210\",\n              \"ip-address-and-subnet\": [\n                \"169.254.2.14/28\",\n                \"fdf8::2:7e/121\"\n              ],\n              \"tp-id\": \"qe-1/1/50.210\"\n            }\n          ],\n          \"type\": \"forwarding-box\"\n        },\n        {\n          \"datapath-id\": \"0xFB03480FCFAFB047\",\n          \"datapath-type\": \"pica8\",\n          \"forwarding-box-name\": \"DC2-FB1\",\n          \"node-id\": \"DC2-FB1\",\n          \"termination-point\": [\n            {\n              \"fb-port-name\": \"te-1/1/1\",\n              \"vlan-id\": \"100\",\n              \"ip-address-and-subnet\": [\n                \"169.254.1.30/27\",\n                \"fdf8::1:fe/120\"\n              ],\n              \"tp-id\": \"te-1/1/1.100\"\n            },\n            {\n              \"fb-port-name\": \"te-1/1/2\",\n              \"tp-id\": \"te-1/1/2\"\n            },\n            {\n              \"fb-port-name\": \"qe-1/1/49\",\n              \"tp-id\": \"qe-1/1/49\"\n            },\n            {\n              \"fb-port-name\": \"qe-1/1/50\",\n              \"vlan-id\": \"213\",\n              \"ip-address-and-subnet\": [\n                \"169.254.2.14/28\",\n                \"fdf8::2:7e/121\"\n              ],\n              \"tp-id\": \"qe-1/1/50.213\"\n            },\n            {\n              \"fb-port-name\": \"qe-1/1/52\",\n              \"tp-id\": \"qe-1/1/52\"\n            }\n          ],\n          \"type\": \"forwarding-box\"\n        },\n        {\n          \"datapath-id\": \"0xFB04480FCFAF40A1\",\n          \"datapath-type\": \"pica8\",\n          \"forwarding-box-name\": \"DC2-FB2\",\n          \"node-id\": \"DC2-FB2\",\n          \"termination-point\": [\n            {\n              \"fb-port-name\": \"te-1/1/1\",\n              \"vlan-id\": \"100\",\n              \"ip-address-and-subnet\": [\n                \"169.254.1.30/27\",\n                \"fdf8::1:fe/120\"\n              ],\n              \"tp-id\": \"te-1/1/1.100\"\n            },\n            {\n              \"fb-port-name\": \"te-1/1/2\",\n              \"tp-id\": \"te-1/1/2\"\n            },\n            {\n              \"fb-port-name\": \"qe-1/1/49\",\n              \"tp-id\": \"qe-1/1/49\"\n            },\n            {\n              \"fb-port-name\": \"qe-1/1/52\",\n              \"tp-id\": \"qe-1/1/52\"\n            }\n          ],\n          \"type\": \"forwarding-box\"\n        },\n        {\n          \"node-id\": \"POD-A1-R1-100\",\n          \"subnets\": {\n            \"static-subnet\": [\n              {\n                \"subnet-id\": \"100.20.16.0/20\"\n              },\n              {\n                \"subnet-id\": \"10.16.0.0/16\"\n              },\n              {\n                \"subnet-id\": \"200.20.16.0/20\"\n              },\n              {\n                \"subnet-id\": \"2001:4888:0:100::/56\"\n              },\n              {\n                \"subnet-id\": \"fdf8:72c6:95f8:100::/56\"\n              },\n              {\n                \"subnet-id\": \"2600:1000:0:100::/56\"\n              }\n            ]\n          },\n          \"termination-point\": [\n            {\n              \"host-port-name\": \"enp130s0.100\",\n              \"ip-address\": [\n                \"169.254.1.1\",\n                \"fdf8::1:1\"\n              ],\n              \"tp-id\": \"enp130s0.100\"\n            }\n          ],\n          \"type\": \"host\"\n        },\n        {\n          \"node-id\": \"POD-A2-R1-100\",\n          \"subnets\": {\n            \"static-subnet\": [\n              {\n                \"subnet-id\": \"100.20.32.0/20\"\n              },\n              {\n                \"subnet-id\": \"10.17.0.0/16\"\n              },\n              {\n                \"subnet-id\": \"200.20.32.0/20\"\n              },\n              {\n                \"subnet-id\": \"2001:4888:0:200::/56\"\n              },\n              {\n                \"subnet-id\": \"fdf8:72c6:95f8:200::/56\"\n              },\n              {\n                \"subnet-id\": \"2600:1000:0:200::/56\"\n              }\n            ]\n          },\n          \"termination-point\": [\n            {\n              \"host-port-name\": \"enp130s0.100\",\n              \"ip-address\": [\n                \"169.254.1.3\",\n                \"fdf8::1:3\"\n              ],\n              \"tp-id\": \"enp130s0.100\"\n            }\n          ],\n          \"type\": \"host\"\n        },\n        {\n          \"node-id\": \"POD-A2-R2-100\",\n          \"subnets\": {\n            \"static-subnet\": [\n              {\n                \"subnet-id\": \"100.20.32.0/20\"\n              },\n              {\n                \"subnet-id\": \"10.17.0.0/16\"\n              },\n              {\n                \"subnet-id\": \"200.20.32.0/20\"\n              },\n              {\n                \"subnet-id\": \"2001:4888:0:200::/56\"\n              },\n              {\n                \"subnet-id\": \"fdf8:72c6:95f8:200::/56\"\n              },\n              {\n                \"subnet-id\": \"2600:1000:0:200::/56\"\n              }\n            ]\n          },\n          \"termination-point\": [\n            {\n              \"host-port-name\": \"enp130s0d1.100\",\n              \"ip-address\": [\n                \"169.254.1.4\",\n                \"fdf8::1:4\"\n              ],\n              \"tp-id\": \"enp130s0d1.100\"\n            }\n          ],\n          \"type\": \"host\"\n        },\n        {\n          \"node-id\": \"POD-B1-R1-210\",\n          \"subnets\": {\n            \"static-subnet\": []\n          },\n          \"termination-point\": [\n            {\n              \"host-port-name\": \"FortyGigE1/0/29.210\",\n              \"ip-address\": [\n                \"169.254.2.1\",\n                \"fdf8::2:1\"\n              ],\n              \"tp-id\": \"FortyGigE1/0/29.210\"\n            }\n          ],\n          \"type\": \"host\"\n        },\n        {\n          \"node-id\": \"POD-B2-R1-213\",\n          \"subnets\": {\n            \"static-subnet\": []\n          },\n          \"termination-point\": [\n            {\n              \"host-port-name\": \"FortyGigE1/0/31.213\",\n              \"ip-address\": [\n                \"169.254.2.2\",\n                \"fdf8::2:2\"\n              ],\n              \"tp-id\": \"FortyGigE1/0/31.213\"\n            }\n          ],\n          \"type\": \"host\"\n        },\n        {\n          \"node-id\": \"VRR1-POD-B-1-200\",\n          \"subnets\": {\n            \"static-subnet\": []\n          },\n          \"termination-point\": [\n            {\n              \"host-port-name\": \"em2.200\",\n              \"ip-address\": [\n                \"169.254.2.12\",\n                \"fdf8::2:7c\"\n              ],\n              \"tp-id\": \"em2.200\"\n            }\n          ],\n          \"type\": \"host\"\n        }\n      ]\n    }\n  ]\n}"
+				},
+				"description": "Provisioned Topology Env A setup"
+			},
+			"response": []
+		},
+		{
+			"name": "Tunnel & BGP Whitelist Policy Env A setup",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/ofl3-path-policy:ofl3-policies",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ofl3-policies\": {\n    \"policy\": [\n      {\n        \"policy-id\": \"Tunnel-DC1-FB1-POD-A2-R1-100\",\n        \"policy-version\": \"12345678-1234-1234-1234-123456789ABC\",\n        \"priority\": 100,\n        \"flow-spec\": {\n          \"source\": {\n            \"node-id\": \"DC1-FB1\"\n          },\n          \"destination\": {\n            \"node-id\": \"POD-A2-R1-100\"\n          }\n        },\n        \"flow-attributes\": {\n          \"kind\": \"unidirectional\"\n        },\n        \"path-bundle\": [\n          {\n            \"bundle-id\": \"maximum-path-cost\",\n            \"role\": \"active\",\n            \"constraints\": {\n              \"max-path-cost\": 20,\n              \"default-use\": \"may-use\"\n            }\n          }\n        ]\n      },\n      {\n        \"policy-id\": \"Tunnel-DC1-FB1-POD-A2-R2-100\",\n        \"policy-version\": \"12345678-1234-1234-1234-123456789ABC\",\n        \"priority\": 100,\n        \"flow-spec\": {\n          \"source\": {\n            \"node-id\": \"DC1-FB1\"\n          },\n          \"destination\": {\n            \"node-id\": \"POD-A2-R2-100\"\n          }\n        },\n        \"flow-attributes\": {\n          \"kind\": \"unidirectional\"\n        },\n        \"path-bundle\": [\n          {\n            \"bundle-id\": \"maximum-path-cost\",\n            \"role\": \"active\",\n            \"constraints\": {\n              \"max-path-cost\": 20,\n              \"default-use\": \"may-use\"\n            }\n          }\n        ]\n      },\n      {\n        \"policy-id\": \"Tunnel-DC2-FB1-POD-A1-R1-100\",\n        \"policy-version\": \"12345678-1234-1234-1234-123456789ABC\",\n        \"priority\": 100,\n        \"flow-spec\": {\n          \"source\": {\n            \"node-id\": \"DC2-FB1\"\n          },\n          \"destination\": {\n            \"node-id\": \"POD-A1-R1-100\"\n          }\n        },\n        \"flow-attributes\": {\n          \"kind\": \"unidirectional\"\n        },\n        \"path-bundle\": [\n          {\n            \"bundle-id\": \"maximum-path-cost\",\n            \"role\": \"active\",\n            \"constraints\": {\n              \"max-path-cost\": 20,\n              \"default-use\": \"may-use\"\n            }\n          }\n        ]\n      },\n      {\n        \"policy-id\": \"Tunnel-DC2-FB2-POD-A1-R1-100\",\n        \"policy-version\": \"12345678-1234-1234-1234-123456789ABC\",\n        \"priority\": 100,\n        \"flow-spec\": {\n          \"source\": {\n            \"node-id\": \"DC2-FB2\"\n          },\n          \"destination\": {\n            \"node-id\": \"POD-A1-R1-100\"\n          }\n        },\n        \"flow-attributes\": {\n          \"kind\": \"unidirectional\"\n        },\n        \"path-bundle\": [\n          {\n            \"bundle-id\": \"maximum-path-cost\",\n            \"role\": \"active\",\n            \"constraints\": {\n              \"max-path-cost\": 20,\n              \"default-use\": \"may-use\"\n            }\n          }\n        ]\n      },\n      {\n        \"policy-id\": \"Tunnel-DC1-FB1-POD-B2-R1-213\",\n        \"policy-version\": \"12345678-1234-1234-1234-123456789ABC\",\n        \"priority\": 100,\n        \"flow-spec\": {\n          \"source\": {\n            \"node-id\": \"DC1-FB1\"\n          },\n          \"destination\": {\n            \"node-id\": \"POD-B2-R1-213\"\n          }\n        },\n        \"flow-attributes\": {\n          \"kind\": \"unidirectional\"\n        },\n        \"path-bundle\": [\n          {\n            \"bundle-id\": \"maximum-path-cost\",\n            \"role\": \"active\",\n            \"constraints\": {\n              \"max-path-cost\": 20,\n              \"default-use\": \"may-use\"\n            }\n          }\n        ]\n      },\n      {\n        \"policy-id\": \"Tunnel-DC2-FB1-POD-B1-R1-210\",\n        \"policy-version\": \"12345678-1234-1234-1234-123456789ABC\",\n        \"priority\": 100,\n        \"flow-spec\": {\n          \"source\": {\n            \"node-id\": \"DC2-FB1\"\n          },\n          \"destination\": {\n            \"node-id\": \"POD-B1-R1-210\"\n          }\n        },\n        \"flow-attributes\": {\n          \"kind\": \"unidirectional\"\n        },\n        \"path-bundle\": [\n          {\n            \"bundle-id\": \"maximum-path-cost\",\n            \"role\": \"active\",\n            \"constraints\": {\n              \"max-path-cost\": 20,\n              \"default-use\": \"may-use\"\n            }\n          }\n        ]\n      },\n      {\n        \"policy-id\": \"POD-B1-R1-210-VRR1-POD-B-1-200-IPv4\",\n        \"policy-version\": \"12345678-1234-1234-1234-123456789ABC\",\n        \"priority\": 100,\n        \"flow-spec\": {\n          \"source\": {\n            \"ip-prefix\": \"169.254.2.1/32\"\n          },\n          \"destination\": {\n            \"ip-prefix\": \"169.254.2.12/32\"\n          }\n        },\n        \"flow-attributes\": {\n          \"kind\": \"bi-directional\"\n        },\n        \"path-bundle\": [\n          {\n            \"bundle-id\": \"maximum-path-cost\",\n            \"role\": \"active\",\n            \"constraints\": {\n              \"max-path-cost\": 20,\n              \"default-use\": \"may-use\"\n            }\n          }\n        ]\n      },\n      {\n        \"policy-id\": \"POD-B2-R1-213-VRR1-POD-B-1-200-IPv4\",\n        \"policy-version\": \"12345678-1234-1234-1234-123456789ABC\",\n        \"priority\": 100,\n        \"flow-spec\": {\n          \"source\": {\n            \"ip-prefix\": \"169.254.2.2/32\"\n          },\n          \"destination\": {\n            \"ip-prefix\": \"169.254.2.12/32\"\n          }\n        },\n        \"flow-attributes\": {\n          \"kind\": \"bi-directional\"\n        },\n        \"path-bundle\": [\n          {\n            \"bundle-id\": \"maximum-path-cost\",\n            \"role\": \"active\",\n            \"constraints\": {\n              \"max-path-cost\": 20,\n              \"default-use\": \"may-use\"\n            }\n          }\n        ]\n      },\n      {\n        \"policy-id\": \"POD-B1-R1-210-VRR1-POD-B-1-200-IPv6\",\n        \"policy-version\": \"12345678-1234-1234-1234-123456789ABC\",\n        \"priority\": 100,\n        \"flow-spec\": {\n          \"source\": {\n            \"ip-prefix\": \"fdf8::2:1/128\"\n          },\n          \"destination\": {\n            \"ip-prefix\": \"fdf8::2:7c/128\"\n          }\n        },\n        \"flow-attributes\": {\n          \"kind\": \"bi-directional\"\n        },\n        \"path-bundle\": [\n          {\n            \"bundle-id\": \"maximum-path-cost\",\n            \"role\": \"active\",\n            \"constraints\": {\n              \"max-path-cost\": 20,\n              \"default-use\": \"may-use\"\n            }\n          }\n        ]\n      },\n      {\n        \"policy-id\": \"POD-B2-R1-213-VRR1-POD-B-1-200-IPv6\",\n        \"policy-version\": \"12345678-1234-1234-1234-123456789ABC\",\n        \"priority\": 100,\n        \"flow-spec\": {\n          \"source\": {\n            \"ip-prefix\": \"fdf8::2:2/128\"\n          },\n          \"destination\": {\n            \"ip-prefix\": \"fdf8::2:7c/128\"\n          }\n        },\n        \"flow-attributes\": {\n          \"kind\": \"bi-directional\"\n        },\n        \"path-bundle\": [\n          {\n            \"bundle-id\": \"maximum-path-cost\",\n            \"role\": \"active\",\n            \"constraints\": {\n              \"max-path-cost\": 20,\n              \"default-use\": \"may-use\"\n            }\n          }\n        ]\n      }\n    ]\n  }\n}"
+				},
+				"description": "Tunnel & BGP Whitelist Policy Env A setup"
+			},
+			"response": []
+		},
+		{
+			"name": "VPN Policy Env A setup",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/ofl3-vpn-service:ofl3-vpns",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ofl3-vpns\": {\n    \"vpn\": [\n      {\n        \"vpn-name\": \"POD-A-V4\",\n        \"vpn-version\": \"12345678-1234-1234-1234-123456789ABC\",\n        \"ingress-match\": \"destination-only\",\n        \"tunnel\": [\n          {\n            \"policy-id\": \"Tunnel-DC1-FB1-POD-A2-R1-100\"\n          },\n          {\n            \"policy-id\": \"Tunnel-DC1-FB1-POD-A2-R2-100\"\n          },\n          {\n            \"policy-id\": \"Tunnel-DC2-FB1-POD-A1-R1-100\"\n          },\n          {\n            \"policy-id\": \"Tunnel-DC2-FB2-POD-A1-R1-100\"\n          }\n        ],\n        \"next-hop\": [\n          {\n              \"ip-address\": \"169.254.1.1\"\n          },\n          {\n              \"ip-address\": \"169.254.1.3\"\n          },\n          {\n              \"ip-address\": \"169.254.1.4\"\n          }\n        ]\n      },\n      {\n        \"vpn-name\": \"POD-A-V6\",\n        \"vpn-version\": \"12345678-1234-1234-1234-123456789ABC\",\n        \"ingress-match\": \"destination-only\",\n        \"tunnel\": [\n          {\n            \"policy-id\": \"Tunnel-DC1-FB1-POD-A2-R1-100\"\n          },\n          {\n            \"policy-id\": \"Tunnel-DC1-FB1-POD-A2-R2-100\"\n          },\n          {\n            \"policy-id\": \"Tunnel-DC2-FB1-POD-A1-R1-100\"\n          },\n          {\n            \"policy-id\": \"Tunnel-DC2-FB2-POD-A1-R1-100\"\n          }\n        ],\n        \"next-hop\": [\n          {\n            \"ip-address\": \"fdf8::1:1\"\n          },\n          {\n            \"ip-address\": \"fdf8::1:3\"\n            },\n          {\n            \"ip-address\": \"fdf8::1:4\"\n          }\n        ]\n      },\n      {\n        \"vpn-name\": \"POD-B-V4\",\n        \"vpn-version\": \"12345678-1234-1234-1234-123456789ABC\",\n        \"ingress-match\": \"destination-only\",\n        \"tunnel\": [\n          {\n            \"policy-id\": \"Tunnel-DC1-FB1-POD-B2-R1-213\"\n          },\n          {\n            \"policy-id\": \"Tunnel-DC2-FB1-POD-B1-R1-210\"\n          }\n        ],\n        \"next-hop\": [\n          {\n              \"ip-address\": \"169.254.2.1\"\n          },\n          {\n              \"ip-address\": \"169.254.2.2\"\n          }\n        ]\n      },\n      {\n        \"vpn-name\": \"POD-B-V6\",\n        \"vpn-version\": \"12345678-1234-1234-1234-123456789ABC\",\n        \"ingress-match\": \"destination-only\",\n        \"tunnel\": [\n          {\n            \"policy-id\": \"Tunnel-DC1-FB1-POD-B2-R1-213\"\n          },\n          {\n            \"policy-id\": \"Tunnel-DC2-FB1-POD-B1-R1-210\"\n          }\n        ],\n        \"next-hop\": [\n          {\n              \"ip-address\": \"fdf8::2:1\"\n          },\n          {\n              \"ip-address\": \"fdf8::2:2\"\n          }\n        ]\n      }\n    ]\n  }\n}"
+				},
+				"description": "VPN Policy Env A setup"
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller BGP RIB setup",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols/protocol/openconfig-policy-types:BGP/ofl3-bgp-rib",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"protocol\": [\n    {\n      \"identifier\": \"openconfig-policy-types:BGP\",\n      \"name\": \"ofl3-bgp-rib\",\n      \"bgp-openconfig-extensions:bgp\": {\n        \"global\": {\n          \"afi-safis\": {\n            \"afi-safi\": [\n              {\n                \"afi-safi-name\": \"openconfig-bgp-types:IPV4-UNICAST\"\n              },\n              {\n                \"afi-safi-name\": \"openconfig-bgp-types:IPV6-UNICAST\"\n              },\n              {\n                \"afi-safi-name\": \"openconfig-bgp-types:L3VPN-IPV4-UNICAST\"\n              },\n              {\n                \"afi-safi-name\": \"openconfig-bgp-types:L3VPN-IPV6-UNICAST\"\n              }\n            ]\n          },\n          \"config\": {\n            \"as\": 65000,\n            \"router-id\": \"10.100.16.151\"\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"description": "OF Controller BGP RIB setup"
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller BGP neighbor setup",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols/protocol/openconfig-policy-types:BGP/ofl3-bgp-rib/bgp/neighbors/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"neighbors\": {\r\n\t  \"neighbor\": [\r\n\t\t{\r\n\t\t  \"neighbor-address\": \"10.100.16.161\",\r\n\t\t  \"config\": {\r\n\t\t\t\"peer-as\": 65000,\r\n\t\t\t\"peer-type\": \"INTERNAL\",\r\n\t\t\t\"auth-password\": \"BrightGlowly0rb!\"\r\n\t\t  },\r\n\t\t  \"afi-safis\": {\r\n\t\t\t\"afi-safi\": [\r\n\t\t\t  {\r\n\t\t\t\t\"afi-safi-name\": \"openconfig-bgp-types:IPV4-UNICAST\"\r\n\t\t\t  },\r\n\t\t\t  {\r\n\t\t\t\t\"afi-safi-name\": \"openconfig-bgp-types:IPV6-UNICAST\"\r\n\t\t\t  },\r\n\t\t\t  {\r\n\t\t\t\t\"afi-safi-name\": \"openconfig-bgp-types:L3VPN-IPV4-UNICAST\"\r\n\t\t\t  },\r\n\t\t\t  {\r\n\t\t\t\t\"afi-safi-name\": \"openconfig-bgp-types:L3VPN-IPV6-UNICAST\"\r\n\t\t\t  }\r\n\t\t\t]\r\n\t\t  }\r\n\t\t},\r\n\t\t{\r\n\t\t  \"neighbor-address\": \"10.100.16.162\",\r\n\t\t  \"config\": {\r\n\t\t\t\"peer-as\": 65000,\r\n\t\t\t\"peer-type\": \"INTERNAL\",\r\n\t\t\t\"auth-password\": \"BrightGlowly0rb!\"\r\n\t\t  },\r\n\t\t  \"afi-safis\": {\r\n\t\t\t\"afi-safi\": [\r\n\t\t\t  {\r\n\t\t\t\t\"afi-safi-name\": \"openconfig-bgp-types:IPV4-UNICAST\"\r\n\t\t\t  },\r\n\t\t\t  {\r\n\t\t\t\t\"afi-safi-name\": \"openconfig-bgp-types:IPV6-UNICAST\"\r\n\t\t\t  },\r\n\t\t\t  {\r\n\t\t\t\t\"afi-safi-name\": \"openconfig-bgp-types:L3VPN-IPV4-UNICAST\"\r\n\t\t\t  },\r\n\t\t\t  {\r\n\t\t\t\t\"afi-safi-name\": \"openconfig-bgp-types:L3VPN-IPV6-UNICAST\"\r\n\t\t\t  }\r\n\t\t\t]\r\n\t\t  }\r\n\t\t}\t\r\n\t  ]\r\n\t} \r\n}"
+				},
+				"description": "OF Controller BGP neighbor setup"
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Kafka setup",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/ofl3-kafka:kafka",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"kafka\": {\r\n    \"bootstrap-servers\": [\r\n      \"10.100.16.101:9093\",\r\n      \"10.100.16.102:9093\",\r\n      \"10.100.16.103:9093\"\r\n    ],\r\n    \"kafka-producer-config\": {\r\n      \"producer-id\": \"controller-kafka\"\r\n    }\r\n  }\r\n}"
+				},
+				"description": "OF Controller Kafka setup"
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Stats Publisher Config",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/ofl3-stats-publisher-config:stats-publisher-config",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"stats-publisher-config\": {\r\n    \"stats-snaptshots-config\": {\r\n      \"include-stats\": [\r\n        \"ports\",\"groups\",\"meters\",\"flows\",\"queues\"\r\n      ],\r\n      \"update-interval\": 30000\r\n    }\r\n  }\r\n}"
+				},
+				"description": "OF Controller Stats Publisher Config"
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Global Threshold Config",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/ofl3-statistics:ofl3-statistics/global-parameters",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"global-parameters\": {\r\n        \"sampling-period\": \"3\",\r\n        \"maximum-window\": \"120\"\r\n    }\r\n}"
+				},
+				"description": "OF Controller Global Threshold Config"
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Status",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/operational/ofl3-controller-status:system-status",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "OF Controller Status"
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Verified Topology Config",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/network-topology:network-topology/topology/of-l3-dci",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Path Policy Config",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/ofl3-path-policy:ofl3-policies",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller VPN Policy Config",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/ofl3-vpn-service:ofl3-vpns",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Operational Topology",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/operational/network-topology:network-topology/topology/of-l3-dci",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Operational Path Policy",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/operational/ofl3-path-policy:ofl3-policies",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Operational VPN Policy",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/operational/ofl3-vpn-service:ofl3-vpns",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller BGP neighbor setup ",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols/protocol/openconfig-policy-types:BGP/ofl3-bgp-rib",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"protocol\": [\n    {\n      \"identifier\": \"openconfig-policy-types:BGP\",\n      \"name\": \"ofl3-bgp-rib\",\n      \"bgp-openconfig-extensions:bgp\": {\n        \"global\": {\n          \"afi-safis\": {\n            \"afi-safi\": [\n              {\n                \"afi-safi-name\": \"openconfig-bgp-types:IPV4-UNICAST\"\n              },\n              {\n                \"afi-safi-name\": \"openconfig-bgp-types:IPV6-UNICAST\"\n              },\n              {\n                \"afi-safi-name\": \"openconfig-bgp-types:L3VPN-IPV4-UNICAST\"\n              },\n              {\n                \"afi-safi-name\": \"openconfig-bgp-types:L3VPN-IPV6-UNICAST\"\n              }\n            ]\n          },\n          \"config\": {\n            \"as\": 65000,\n            \"router-id\": \"10.100.16.151\"\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"description": "OF Controller BGP neighbor setup"
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Operational BGP RIB",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/operational/bgp-rib:bgp-rib/rib/ofl3-bgp-rib",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "OF Controller BGP RIB"
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Kafka setup",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/ofl3-kafka:kafka",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"kafka\": {\r\n    \"bootstrap-servers\": [\r\n      \"10.100.16.101:9093\"\r\n    ],\r\n    \"kafka-producer-config\": {\r\n      \"producer-id\": \"controller-kafka\"\r\n    }\r\n  }\r\n}"
+				},
+				"description": "OF Controller Kafka setup"
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Stats Publisher Config",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/ofl3-stats-publisher-config:stats-publisher-config",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"stats-publisher-config\": {\r\n    \"stats-snaptshots-config\": {\r\n      \"include-stats\": [\r\n        \"ports\",\"groups\",\"meters\",\"flows\",\"queues\"\r\n      ],\r\n      \"update-interval\": 30000\r\n    }\r\n  }\r\n}"
+				},
+				"description": "OF Controller Stats Publisher Config"
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Global Threshold Config",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/ofl3-statistics:ofl3-statistics/global-parameters",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"global-parameters\": {\r\n        \"sampling-period\": \"3\",\r\n        \"maximum-window\": \"120\"\r\n    }\r\n}"
+				},
+				"description": "OF Controller Global Threshold Config"
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Groups & Flows Config",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/opendaylight-inventory:nodes",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Groups & Flows Stats",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/operational/opendaylight-inventory:nodes",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Stats Notifications",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/operations/ofl3-statistics:get-notifications",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Stats Registrations",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/config/ofl3-statistics:ofl3-statistics/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"input\": {\r\n        \"registration-id\": \"stat_DC1-FB1-DC2-FB1-G1\",\r\n        \"window\": \"5\",  \r\n        \"response-type\": \"aggregate\",\r\n        \"response-units\": \"link-utilization\"\r\n    }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "OF Controller Stats Statsitics",
+			"request": {
+				"url": "http://127.0.0.1:8181/restconf/operations/ofl3-statistics:get-statistics",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"input\": {\r\n        \"registration-id\": \"statistic_registration_DC1-DC2-G1\",\r\n        \"window\": \"5\",  \r\n        \"response-type\": \"aggregate\",\r\n        \"response-units\": \"link-utilization\"\r\n    }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
